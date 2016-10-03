@@ -1,0 +1,7 @@
+#!/bin/bash
+#PBS -q class
+#PBS -l nodes=4:sixcore
+#PBS -l walltime=00:05:00
+#PBS -N MPI_mcs
+
+/nethome/rankalikar3/MPI/mpiConfig.sh
