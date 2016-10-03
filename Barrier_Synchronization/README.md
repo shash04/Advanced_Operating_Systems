@@ -1,8 +1,8 @@
 # Barrier Synchronization
 ## Overview:
 The goal of this project is to introduce OpenMP, MPI, and barrier synchronization concepts.
-OpenMP allows you to run parallel algorithms on shared-memory multiprocessor/multicore machines. MPI allows you to run parallel algorithms on distributed memory systems, such as compute clusters. The project consists of implementation of two spin barriers using OpenMP and MPI each. It also includes an implementation with combination of MPI-OpenMP program in order to synchronize between multiple cluster nodes that are running multiple threads themselves. 
-Experimentation was done to evaluate the performance of your barrier implementations. (Information about compute resources for running experiments is below.) OpenMP barriers were run on an 8-way SMP (symmetric multi-processor) system, and MPI and MPI-OpenMP combined experiments on a (up to) 24 12-core cluster (24 nodes, and each node has two six-core processors).
+OpenMP allows you to run parallel algorithms on shared-memory multiprocessor/multicore machines. MPI allows you to run parallel algorithms on distributed memory systems, such as compute clusters. This project consists of implementation of two spin barriers using OpenMP and MPI each. It also includes an implementation with combination of MPI-OpenMP program in order to synchronize between multiple cluster nodes that are running multiple threads themselves. 
+Experimentation was done to evaluate the performance of your barrier implementations. OpenMP barriers were run on an 8-way SMP (symmetric multi-processor) system, and MPI and MPI-OpenMP combined experiments on a (up to) 24 12-core cluster (24 nodes, and each node has two six-core processors).
 
 ## Steps to run the project files:
 
