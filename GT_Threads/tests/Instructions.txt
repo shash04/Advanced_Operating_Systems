@@ -1,0 +1,3 @@
+To run any test, copy the test file contents to gtthread_main.c present in parent folder
+Run make command
+Run the gtthread_main.o file created
