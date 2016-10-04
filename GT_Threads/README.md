@@ -4,7 +4,7 @@ GTThreads is a preemptive user-level thread package with an API similar to Pthre
 The project implements the core of the thread library as well as a thread scheduler. The scheduler is a preemptive round robin scheduler. Each thread is assigned a time slice (its quantum) for which it is allowed to run; a thread is preempted if it used up its quantum. Preemption is achieved by using an alarm signal as a timer.
 
 ## GTThreads API:
-GTThreads API contains the following functions:
+GTThreads API contains the following functions:  
 void gtthread_init(long period);  
 int  gtthread_create(gtthread_t *thread, void *(*start_routine)(void *), void *arg);  
 int  gtthread_join(gtthread_t thread, void **status);  
@@ -14,7 +14,7 @@ int  gtthread_equal(gtthread_t t1, gtthread_t t2);
 int  gtthread_cancel(gtthread_t thread);  
 gtthread_t gtthread_self(void);  
 
-Also included is mutex synchronization primitive to enable safe concurrent manipulation of shared data. The API for the mutex primitive is as follows:
+Also included is mutex synchronization primitive to enable safe concurrent manipulation of shared data. The API for the mutex primitive is as follows:  
 int  gtthread_mutex_init(gtthread_mutex_t *mutex);  
 int  gtthread_mutex_lock(gtthread_mutex_t *mutex);  
 int  gtthread_mutex_unlock(gtthread_mutex_t *mutex);  
