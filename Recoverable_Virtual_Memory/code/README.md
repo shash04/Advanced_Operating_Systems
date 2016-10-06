@@ -7,7 +7,7 @@
 4) 	Note: Dont forget to innclude rvm.h in testcase files by adding line: #include "../rvm.h"  
 
 ## How log files are used to accomplish persistency and transaction semantics?  
-	Persistency is accomplished as follows:  
+Persistency is accomplished as follows:  
 1)	We create a log file named redo.txt on disk to keep the data after commiting transactions. A undo log is kept in memory to restore the contents in case the transaction is aborted before getting commited.  
 2)	Every rvm object has a transaction map and every transaction has a list of log structures. Every log structure has parameters such as transaction id, size of log, pointer to segment base, offset, name of segment and pointer to undo log in memory.  
 3)	Mapping of a segment leads to creation of a segment file with a name of corresponding segment.  
@@ -26,9 +26,9 @@
 1) 	Segment files and redo log files are stored on disk. For every transaction, whenever there is a call to about_to_modify(), we create an object of log structure in memory which is used as undo_log.  
 2)	On rvm_commit_tran(), records of redo log entries of the commited transaction are written to a redo.txt file. redo.txt is shared across various transactions and segments and is unique to an RVM.  
 3)	Typical redolog entry looks like this -  
-    <segname>,<offset>,<size>,<actual_data>  
+    "<segname>,<offset>,<size>,<actual_data>"  
     For multiple entries in the redo.txt, the above entry format is repeated as:  
-    <segname1>,<offset1>,<size1>,<actual_data1><segname2>,<offset2>,<size2>,<actual_data2>....  
+    "<segname1>,<offset1>,<size1>,<actual_data1><segname2>,<offset2>,<size2>,<actual_data2>...."  
 4)	truncate() function applies these redo logs to the respective segments. This redo.txt is truncated if   
     i. the segment is being mapped next time or   
     ii. On explicit call to truncate() function  
