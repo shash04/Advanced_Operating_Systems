@@ -1,5 +1,3 @@
-# Recoverable Virtual Memory
-
 ## Steps to compile code
 1) 	Makefile contains the command for compiling the librvm library. Use `make` command to compile the library. It will create librvm.a  
 2) 	Testcases are persent in a folder named testcases. Thus the testcases can be compiled using following command:  
