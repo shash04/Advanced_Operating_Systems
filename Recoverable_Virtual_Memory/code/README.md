@@ -26,9 +26,9 @@ Persistency is accomplished as follows:
 1) 	Segment files and redo log files are stored on disk. For every transaction, whenever there is a call to about_to_modify(), we create an object of log structure in memory which is used as undo_log.  
 2)	On rvm_commit_tran(), records of redo log entries of the commited transaction are written to a redo.txt file. redo.txt is shared across various transactions and segments and is unique to an RVM.  
 3)	Typical redolog entry looks like this -  
-    "<segname>,<offset>,<size>,<actual_data>"  
+    \<segname\>,\<offset\>,\<size\>,\<actual_data\>  
     For multiple entries in the redo.txt, the above entry format is repeated as:  
-    "<segname1>,<offset1>,<size1>,<actual_data1><segname2>,<offset2>,<size2>,<actual_data2>...."  
+    \<segname1\>,\<offset1\>,\<size1\>,\<actual_data1\>\<segname2\>,\<offset2\>,\<size2\>,\<actual_data2\>....  
 4)	truncate() function applies these redo logs to the respective segments. This redo.txt is truncated if   
     i. the segment is being mapped next time or   
     ii. On explicit call to truncate() function  
